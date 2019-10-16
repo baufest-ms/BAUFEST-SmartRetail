@@ -1,0 +1,14 @@
+{
+    "user": "",
+    "password": "",
+    "host": "",
+    "port": 21,
+    "localRoot": "",
+    "remoteRoot": "/site/wwwroot",
+    "include": [
+        "*",
+        "**/*"
+    ],
+    "deleteRemote": true,
+    "forcePasv": true
+}

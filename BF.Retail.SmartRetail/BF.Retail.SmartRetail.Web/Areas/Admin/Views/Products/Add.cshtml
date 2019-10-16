@@ -1,0 +1,14 @@
+﻿@model BF.Retail.SmartRetail.Web.Areas.Admin.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "Product > Add a new Product";
+}
+
+@using (Html.BeginForm("Add", "Products", FormMethod.Post))
+{
+    @Html.Partial("_CreateUpdate", Model)
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/bfsmartretail-admin-products")
+}

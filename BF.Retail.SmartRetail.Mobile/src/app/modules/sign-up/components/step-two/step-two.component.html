@@ -1,0 +1,48 @@
+
+<div class="row">
+  <div class="content col-12">
+    <div class="d-flex justify-content-center row">
+      <div class="col-12 stepper text-center d-flex justify-content-center mb-3">
+        <div class="col-2 align-self-end px-0 justify-content-end d-flex">
+          <div class="step p-2 active">
+            <i class="material-icons">
+              check
+            </i>
+          </div>
+          </div>
+        <div class="col-2 px-0"><hr></div>
+        <div class="col-2 align-self-start px-0 justify-content-start d-flex">
+          <div class="step p-2 active">2</div>
+        </div>
+      </div>
+      
+      <h2 class="h2">Sacate una foto</h2>
+    </div>
+    
+    <div class="col-10 captura_datos text-center d-inline">
+        <div class="cam-ico"> <img src="./../../../../../assets/images/cam_icon.png" alt=""></div>
+        <div class="pic product">
+            <div class="sample-heading">                        
+              <rd-camera (photoTaken)="photo($event)" [photo]="photoUrl" #camera></rd-camera>
+            </div>                    
+        </div>                
+    </div>
+
+
+
+
+
+  
+    <div class="d-flex justify-content-center">
+      <!-- <button class="btn btn-primary btn-rounded fixed" (click)="previous()">Anterior</button> -->
+      <button class="btn btn-primary btn-rounded botton-cached d-flex" *ngIf="photoTaken" (click)="retry(camera)">
+        Reintentar
+      </button>
+      <button class="btn btn-primary btn-rounded fixed" *ngIf="!photoTaken" (click)="shoot(camera)">Sacar foto</button>
+      <button class="btn btn-primary btn-rounded" *ngIf="photoTaken" (click)="next()">Siguiente</button>
+    </div>
+
+
+  </div>
+</div>
+

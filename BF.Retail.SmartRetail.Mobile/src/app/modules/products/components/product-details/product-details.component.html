@@ -1,0 +1,46 @@
+
+<div class="container-fluid" *ngIf="loading">
+  <div class="row">
+    <div class="col-12">
+      <h2>
+        <p class="loading">Cargando...</p>
+      </h2>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid " *ngIf="!loading">
+  <div class="row">
+  <div class="col-12 p-0 ">
+    <img class="img-thumbnail w-100" [src]="'./assets/images/products/'+ details?.Code.trim().toLowerCase() +'.jpg'">
+  </div>
+</div>
+  
+  <div class="row py-2 content">
+    <div class="col-7">
+      <h2 class="h4 font-weight-bold">{{details?.Name}}</h2>
+    </div>
+    <div class="col-5">
+      
+      <h4 class="h4 text-right">${{details?.Price}}</h4>
+    </div>
+  </div>
+  <div class="row  content">
+    <div class="col-12">
+      <h4 class="h2">Descripción</h4>
+      <p class="font-italic">{{details?.Description}}</p>
+    </div>
+  </div>
+  <div class="row fixed-bottom px-2">
+    <div class="col-6 d-flex">
+      <button class="btn btn-block btn-outline-primary btn-rounded" routerLink="/product-scanner">Nuevo escaneo</button>
+    </div>
+    <div class="col-6 d-flex">
+      <button class="btn btn-block btn-primary btn-rounded" *ngIf="!isProductAcquired" (click)="buy()">Comprar</button>
+      <button class="btn btn-primary btn-rounded btn-block" *ngIf="isProductAcquired" disabled>Ya adquirido</button>
+    </div>
+  </div>
+  
+</div>

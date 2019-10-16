@@ -1,0 +1,32 @@
+﻿@model BF.Retail.SmartRetail.Web.Areas.Admin.Models.ProductViewModel
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Code)
+    @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Code, null, new {@class = "text-danger"})
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Description)
+    @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Description, null, new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Price)
+    @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Price, null, new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    <button type="submit" class="btn btn-primary">Save</button>
+    @Html.ActionLink("Cancel", "Index", new { }, new { @class = "btn btn-warning"})
+</div>
+
+@Html.ValidationSummary(true, null, new { @class = "text-danger" })

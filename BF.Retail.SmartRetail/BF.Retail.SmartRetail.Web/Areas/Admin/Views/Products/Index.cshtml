@@ -1,0 +1,41 @@
+﻿@model BF.Retail.SmartRetail.Web.Areas.Admin.Models.ProductListViewModel
+
+@{
+    ViewBag.Title = "Products";
+}
+
+@Html.ActionLink("Add a new Product", "Add", new { }, new { @class = "btn btn-sm btn-dark", role = "button" })
+
+<hr />
+
+<table class="table table-sm table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.List)
+        {
+        <tr>
+            <th scope="row">@product.Id</th>
+            <td>@product.Code</td>
+            <td>@product.Name</td>
+            <td>@product.Description</td>
+            <td>@product.Price</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = product.Id }, new { @class = "btn btn-sm btn-info", role = "button" })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts {
+    @Scripts.Render("~/bundles/bfsmartretail-admin-products")
+}

@@ -1,0 +1,22 @@
+.preview {
+  object-fit: cover;
+  object-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1000;
+}
+
+.preview-user {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+}
+
+.preview-hide {
+  display: none;
+}

@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h1>Smart Retail Admin</h1>
+    <p class="lead">This POC was build using the APIs provided by Microsoft Azure Cognitive Services</p>
+    <p><a href="https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236" target="_blank" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Setup your first Face Recognition application for retail industry</h2>
+        <ul>
+            <li>Create a new group to manage your team</li>
+            <li>Then add people to this group with some pictures of them (either by this Admin site or the Mobile App provided)</li>
+            <li>Finally, try to recognize them through the service area @Html.ActionLink("Panel", "Index", "Home", new { Area = "" }, null)</li>
+        </ul>
+        @Html.ActionLink("Start now »", "Index", "Groups", null, new { @class = "btn btn-default" })
+    </div>
+</div>

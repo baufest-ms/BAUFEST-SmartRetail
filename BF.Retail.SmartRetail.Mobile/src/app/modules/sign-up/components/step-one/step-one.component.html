@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-12 content">
+    
+    <div class="d-flex justify-content-center row">
+      <div class="col-12 stepper text-center d-flex justify-content-center mb-3">
+        <div class="col-2 align-self-end px-0 justify-content-end d-flex">
+          <div class="step p-2 active">1</div>
+          </div>
+        <div class="col-2 px-0"><hr></div>
+        <div class="col-2 align-self-start px-0 justify-content-start d-flex">
+          <div class="step p-2">2</div>
+        </div>
+      </div>
+      <h2 class="h2">Registrá tus datos</h2>
+    </div>
+    
+    
+    
+    <form [formGroup]="signUpForm" (submit)="siguiente()">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" [class.is-invalid]="isInvalid(signUpForm.controls.fullName)" formControlName="fullName">
+        <div class="invalid-feedback" *ngIf="signUpForm.controls.fullName.errors?.required">
+          Este campo es requerido.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Mail</label>
+        <input type="email" class="form-control" [class.is-invalid]="isInvalid(signUpForm.controls.email)" formControlName="email">
+        <div class="invalid-feedback" *ngIf="signUpForm.controls.email.errors?.required">
+          Este campo es requerido.
+        </div>
+        <div class="invalid-feedback" *ngIf="signUpForm.controls.email.errors?.email">
+          El correo ingresado no es válido.
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary btn-rounded">Siguiente</button>
+      </div>
+    </form>
+    
+  </div>
+</div>

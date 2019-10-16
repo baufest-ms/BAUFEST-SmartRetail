@@ -1,0 +1,211 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+// fonts 
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+
+// Colores
+
+$bg-from:           #fb90d5;
+$bg-mid-1:          #ec86de;
+$bg-mid-2:          #d77ee8;
+$bg-mid-3:          #bb79f4;
+$bg-to:             #9477ff;
+$primary:           #5629FE;
+$prod_visited:      #5F42CB;
+$prod_bought:       #BC44C5;
+$white:             #ffffff;
+$black:             #000000;
+$selected:          #F3D239;
+$alert:             #cc0000;
+$botton:            #ff0000;
+
+
+body {
+    background-image: $bg-to;
+    background-image: -moz-linear-gradient(to right top, $bg-from, $bg-mid-1, $bg-mid-2, $bg-mid-3, $bg-to); /* FF3.6-15 */
+    background-image: -webkit-linear-gradient(to right top, $bg-from, $bg-mid-1, $bg-mid-2, $bg-mid-3, $bg-to);  /* Chrome10-25,Safari5.1-6 */
+    background-image: linear-gradient(to right top, $bg-from, $bg-mid-1, $bg-mid-2, $bg-mid-3, $bg-to);  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fb90d5",endColorstr="#9477ff",GradientType=1);  /* IE6-9 fallback on horizontal gradient */
+    background-size:  100vw 120vh;
+
+    width: 100vw;
+    height: 100vh;    
+    
+    font-size:10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+    
+}
+.fixed-bottom {
+       position: fixed;
+        bottom: .5rem;
+
+}
+.btn {
+    background-color: $primary !important;
+    letter-spacing: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+        border:2px solid $primary;
+    &.btn-outline-primary{
+        border:2px solid $white !important;
+           
+            color: $white!important;
+            background-color: transparent !important;
+    }
+    &.btn-rounded {
+        border-radius: 50px;
+        padding:10px 30px;
+        .fas {
+            font-size: 40px;
+            border:2px solid $primary;
+            border-radius: 30px;
+            color: $botton;
+        }
+    }
+    &.fixed {
+        position: fixed;
+        bottom: 0.5rem;
+    }
+    &.botton-cached {
+        background-color: $white !important;
+        border:2px solid $white;
+        border-radius: 30px;
+        color: $primary;
+        bottom:3rem;
+        padding:10px;
+          .material-icons{
+                font-size: 20px !important;
+                
+            }
+        
+    }
+    
+}
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .h1{
+        color: $white; 
+        letter-spacing: 4px;
+        font-size: 4em;
+        text-transform: uppercase;
+    }
+}
+
+.content {
+    .h2{
+        color: $white; 
+        letter-spacing: 1px;
+        font-size: 2em;
+    }
+    .h4 {
+        color: $white;
+        letter-spacing: 1px;
+        font-size: 1.5rem;
+    }
+    .stepper{
+        color: $bg-from;
+        .step{
+            border: 4px solid $bg-from;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            width: 48px;
+            &.active{
+                background-color: $bg-from;
+                color:$bg-mid-3;
+            }
+            .material-icons{
+                font-size: 15px !important;
+                
+            }
+        }
+        hr {
+            border-width: 2px;
+            border-color: $bg-from;
+            margin-top: 1.5rem;
+        }
+    }
+    p, label{
+        font-size: 1rem;
+        color:$white;
+        .loading {
+            font-size: 0.9rem;
+        }
+    }
+    input.form-control {
+        border: none;
+        border-bottom: 2px solid $white;
+        background-color: transparent;
+        border-radius: 0px;
+        color:$white;
+        &:focus{
+            background-color: transparent;
+        }
+        &:invalid, &.is-invalid {
+            border-bottom:2px solid $alert;
+        }
+    }
+    
+    .cam-ico {
+        position: relative;
+        top: 20px;
+        z-index: 10000000000;
+    }
+    
+    .pic{
+     background-color:rgba(0, 0, 0, 0.1);
+        min-height: 30%;
+        // height: 100%;
+        width: 40%;
+        margin: 0 auto;
+        &.product {
+            width: 55%;
+        }
+        @import '_border-corner_library';
+        .sample-heading {
+            font-size: 2em; // using default browser font size of 16px, therefore 32px
+            // padding: 1em + (8/32 * 1em); // the border is not actual border, tehrefore you have to increase the padding accordingly
+            @include buildCorners(#000, 40, 8, 32);
+            min-height: 100%;
+        }
+        
+        .preview {
+            position: relative;
+            width: 99%;
+            top: 0.2rem;
+            // z-index: 0;
+        }
+        img.preview-user{
+            // display: none;
+        }
+    }
+    .height-60{
+        height: 60vh;
+
+    }
+    .height-100{
+        height: 100vh;
+
+    }
+        .modal-box {
+            .h4 {
+                margin-bottom: 15px;
+                color:$black;
+            }
+            p{
+                color:$black;
+            }
+            padding:20px;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 10px;
+        }
+}
+
+.invalid-feedback {
+    font-size: .9rem;
+    color: $alert;
+}

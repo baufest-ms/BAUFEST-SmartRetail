@@ -1,0 +1,14 @@
+<p *ngIf="loading" class="loading">Accediendo a la cámara...</p>
+<video
+  class="preview"
+  [class.preview-user]="isFacingModeUser()"
+  [class.preview-hide]="!photoTaken"
+  autoplay #video>
+</video>
+<img
+  class="preview"
+  [class.preview-user]="isFacingModeUser()"
+  [class.preview-hide]="photoTaken"
+  style="z-index: -1;"
+  *ngIf="photo"
+  [src]="photo">

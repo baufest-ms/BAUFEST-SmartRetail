@@ -1,0 +1,54 @@
+<div class="row content">
+<div class="height-60 col-12" *ngIf="loading" >  
+    <p class="loading">Registración en progreso...</p> 
+  </div>
+
+  <div class="col-12 d-flex flex-column height-60 justify-content-center" *ngIf="!loading" >    
+    
+
+<div  class="text-center modal-box" *ngIf="!error">
+      <h4 class="h4" >
+        ¡Registro exitoso!
+      </h4>
+      <img src="./../../../../../assets/images/checked.svg" alt="Eexito en el registro" width="40%" height="auto"  class="my-3">
+      <p>Ya puedes empezar a usar la app.<br/>Acercate a nuestro stand</p>
+    </div>
+
+
+    <div class="text-center modal-box" *ngIf="error">
+      <h4 class="h4 loading" >
+        Ocurrió un error.
+      </h4>
+      <img src="./../../../../../assets/images/cancel.svg" alt="Error en el registro" width="40%" height="auto" class="my-3">
+      <p class="loading">
+        Por favor intentá de nuevo.
+      </p>
+      <p *ngIf="error && emailAlreadyRegistered" class="loading">        
+        El email con el cual estás intentando registrarse ya está en uso, por favor elegí otro.
+      </p>
+      
+    </div>
+
+
+
+
+    <div class="d-flex justify-content-center fixed-bottom">
+      <button class="btn btn-primary btn-rounded " *ngIf="!error" (click)="finish()">Siguiente</button>
+      
+      <div class="d-flex justify-content-center fixed-bottom" *ngIf="error">
+         <!-- btn-outline-secondary --> <button class="btn btn-outline-primary btn-rounded " routerLink="../step-two">Anterior</button>
+         <!-- btn-outline-danger --> <button class="btn  btn-primary btn-rounded " *ngIf="error && !emailAlreadyRegistered" (click)="retry()">Reintentar</button>
+          <!-- btn-outline-danger --> <button class="btn  btn-primary btn-rounded " *ngIf="error && emailAlreadyRegistered" routerLink="../step-one">
+          Reiniciar
+        </button> 
+      </div>
+    </div> 
+
+  </div>
+</div>
+
+<!--
+  409	Conflict	              El mail ya se encuentra registrado previamente
+  400	Bad Request	            Error funcional de negocio general
+  500	Internal Server Error	  Error de código o formato de datos
+-->

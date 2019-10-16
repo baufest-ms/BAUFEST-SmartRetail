@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Panel";
+}
+
+<div id="Panel-App" class="col-4 captura_datos text-center">
+    <img src="/Images/logo_transparente.png" width="30%" class="text-left" alt="" /> 
+    <h1 class="h1">Face <b>Smart</b>Retail</h1>
+    <div class="cam-ico"> <img src="~/Images/cam_icon.png" alt=""></div>
+    <div class="pic text-left">
+        <div class="sample-heading">
+            <div class="video-container">
+                <div id="VideoPlayerContainer">
+                    <video id="VideoPlayer" class="w-100" autoplay></video>
+                </div>
+
+                <div id="PictureCanvasContainer" class="d-none"></div>
+            </div>
+        </div>
+    </div>
+
+    <button id="Do-Capture" class="btn-rounded btn btn-primary"><i class="fas fa-circle"></i></button>
+
+    <form action="" class=" px-5">
+        <!-- Material input -->
+        <div class="md-form imput-group">
+            <input type="text" id="Customer-Fullname" class="form-control" readonly="readonly" value="" />
+            <label for="Customer-Fullname">Nombre</label>
+        </div>
+        <div class="md-form imput-group">
+            <input type="text" id="Customer-Email" class="form-control" readonly="readonly" value="" />
+            <label for="Customer-Email">Email</label>
+        </div>
+    </form>
+    <div class="biometrics px-5 text-left">
+        <p><img src="~/Images/baseline-blur_circular-24px.png" alt=""> Certeza de reconocimiento: <b id="Customer-Score">- %</b></p>
+        <p><img src="~/Images/baseline-tag_faces-24px.png" alt=""> Emoción principal: <b id="Customer-Emotion">- ( -% ) </b></p>
+    </div>
+</div>
+
+<div id="Panel-Wait" class="col-8 text-center productos">
+    <div class="box d-flex flex-center">
+        <h2 class="h1"><b>Sacate una foto</b> y <br /> <b>descubrí</b> qué compraste</h2>
+    </div>
+</div>
+
+<div id="Panel-Msgs" class="col-8 text-center productos d-none">
+    <div class="box d-flex flex-center">
+        <h2 id="Area-WIP" class="h1 d-none"><b>Analizando foto...</b></h2>
+        <h2 id="Area-Alert" class="h1 d-none">
+            <b id="Show-Msg"></b>
+            <br /><br />
+            <b id="Do-Retry" class="btn btn-primary btn-rounded p-3">Volver a intentar</b>
+        </h2>
+    </div>
+</div>
+
+<div id="Panel-Products" class="col-8 productos d-none">
+    @*<div class="row">
+        <div class="col-12 d-inline text-right">
+            <img src="/Images/logo_transparente.png" width="20%" class="text-right" alt="" />
+        </div>
+    </div>*@ 
+    <div class="row comprados pb-3">
+        <div class="col-12">
+            <h2 class="h3">Productos Comprados</h2>
+        </div>
+        <div id="Customer-Purchases" class="col-12 d-flex justify-content-between"></div>
+    </div>
+    <div class="row vistos">
+        <div class="col-12">
+            <h2 class="h3">Productos Vistos</h2>
+        </div>
+        <div id="Customer-Visualizations" class="col-12 d-flex justify-content-between"></div>
+    </div>
+    <div class="row">
+        <div class="col text-right">
+            <br /><br />
+            <b id="Do-PlayAgain" class="btn btn-primary btn-rounded p-3">Volver a escanear</b>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/bfsmartretail-panel")
+}

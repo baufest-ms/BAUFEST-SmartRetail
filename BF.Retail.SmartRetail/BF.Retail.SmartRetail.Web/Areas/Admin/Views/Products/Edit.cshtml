@@ -1,0 +1,15 @@
+﻿@model BF.Retail.SmartRetail.Web.Areas.Admin.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "Product > Edit a Product";
+}
+
+@using (Html.BeginForm("Edit", "Products"))
+{
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    @Html.Partial("_CreateUpdate", Model)
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/bfsmartretail-admin-products")
+}

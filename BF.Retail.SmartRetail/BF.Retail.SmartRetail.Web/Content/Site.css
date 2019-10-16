@@ -1,0 +1,178 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
+body {
+    background-image: #9477ff;
+    background-image: -moz-linear-gradient(to right top, #fb90d5, #ec86de, #d77ee8, #bb79f4, #9477ff);
+    /* FF3.6-15 */
+    background-image: -webkit-linear-gradient(to right top, #fb90d5, #ec86de, #d77ee8, #bb79f4, #9477ff);
+    /* Chrome10-25,Safari5.1-6 */
+    background-image: linear-gradient(to right top, #fb90d5, #ec86de, #d77ee8, #bb79f4, #9477ff);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fb90d5",endColorstr="#9477ff",GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    width: 100vw;
+    height: 100vh;
+    font-size: 10px;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+    body .full-row {
+        height: 100vh;
+    }
+
+.captura_datos, .productos {
+    padding: 2em;
+}
+
+    .captura_datos .h1 {
+        color: #ffffff;
+        letter-spacing: 2px;
+        font-size: 4em;
+        text-transform: uppercase;
+    }
+
+    .captura_datos .cam-ico {
+        position: relative;
+        top: 20px;
+        z-index: 100;
+    }
+
+    .captura_datos .pic {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+        .captura_datos .pic .sample-heading {
+            font-size: 2em;
+            background-repeat: no-repeat;
+            background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%;
+            background-size: 1.25em 1.25em, 1.25em 1.25em, 1.25em 1.25em, 1.25em 1.25em;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox=%220 0 40 40%22%3E%3Cpolygon points=%2240 0 8 0 0 0 0 8 0 40 8 40 8 8 40 8 40 0%22 fill=%22%23000%22 %2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox=%220 0 40 40%22%3E%3Cpolygon points=%2240 0 8 0 0 0 0 8 0 40 8 40 8 8 40 8 40 0%22 fill=%22%23000%22 transform=%22translate(40, 0) rotate(90)%22 %2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox=%220 0 40 40%22%3E%3Cpolygon points=%2240 0 8 0 0 0 0 8 0 40 8 40 8 8 40 8 40 0%22 fill=%22%23000%22 transform=%22translate(40, 40) rotate(180)%22 %2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox=%220 0 40 40%22%3E%3Cpolygon points=%2240 0 8 0 0 0 0 8 0 40 8 40 8 8 40 8 40 0%22 fill=%22%23000%22 transform=%22translate(0, 40) rotate(270)%22 %2F%3E%3C%2Fsvg%3E");
+            min-height: 100%;
+        }
+
+    .captura_datos .video-container {
+        position: relative;
+        top: .3rem;
+        padding: 0 5px;
+    }
+
+    .captura_datos .fas.disabled {
+        border: 2px solid gray !important;
+        color: lightgray !important;
+    }
+
+    .captura_datos .md-form {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+        .captura_datos .md-form label, .captura_datos .md-form .form-control {
+            color: #ffffff;
+        }
+
+    .captura_datos .biometrics p {
+        color: #ffffff;
+        font-size: 1.1rem;
+    }
+
+        .captura_datos .biometrics p b {
+            font-weight: bold;
+        }
+
+.productos {
+    color: #ffffff;
+}
+
+    .productos .box {
+        min-height: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+        .productos .box .h1 {
+            font-size: 3em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+    .productos .card {
+        min-width: 12%;
+        max-width: 30%;
+    }
+
+        .productos .card .card-body {
+            padding: 0.5rem;
+        }
+
+            .productos .card .card-body .card-title {
+                font-size: 1rem;
+                margin-bottom: 0.2rem;
+                font-weight: bold;
+            }
+
+            .productos .card .card-body .card-short-desc {
+                margin-bottom: 0.1rem;
+            }
+
+            .productos .card .card-body .card-text {
+                font-size: 0.8rem;
+                color: #ffffff;
+            }
+
+            .productos .card .card-body .price {
+                margin-bottom: 0;
+                font-size: 1rem;
+            }
+
+            .productos .card .card-body .calif {
+                margin-bottom: 0;
+            }
+
+                .productos .card .card-body .calif .fas {
+                    font-size: 0.4rem;
+                }
+
+                    .productos .card .card-body .calif .fas.selected {
+                        color: #F3D239;
+                    }
+
+    .productos .comprados .card .card-body {
+        background-color: #BC44C5;
+    }
+
+    .productos .comprados .card:not(:last-child) {
+        margin-right: 5px;
+    }
+
+    .productos .comprados .card:not(:first-child) {
+        margin-left: 5px;
+    }
+
+    .productos .vistos .card:not(:last-child) {
+        margin-right: 5px;
+    }
+
+    .productos .vistos .card:not(:first-child) {
+        margin-left: 5px;
+    }
+
+    .productos .vistos .card .card-body {
+        background-color: #5F42CB;
+    }
+
+.btn {
+    background-color: #5629FE !important;
+}
+
+    .btn.btn-rounded {
+        border-radius: 50px;
+        padding: 0px;
+    }
+
+        .btn.btn-rounded .fas {
+            font-size: 40px;
+            border: 2px solid #5629FE;
+            border-radius: 30px;
+            color: #ff0000;
+        }
